@@ -63,21 +63,36 @@ export const useAuthStore = create((set) => ({
         }
       },
 
-      updateProfile: async (data) => {
+    //   updateProfile: async (data) => {
+    //     set({ isUpdatingProfile: true });
+    //     try {
+    //       console.log("Update profile data being sent:", data); // Log the data being sent
+    //       const res = await axiosInstance.put("/auth/update-profile", data);
+    //       console.log("Update profile response:", res.data); // Log the response received
+    //       set({ authUser: res.data });
+    //       toast.success("Profile updated successfully");
+    //     } catch (error) {
+    //       console.log("error in update profile:", error);
+    //       toast.error(error.response.data.message);
+    //     } finally {
+    //       set({ isUpdatingProfile: false });
+    //     }
+    //   },  
+    updateProfile: async (data) => {
         set({ isUpdatingProfile: true });
         try {
-          console.log("Update profile data being sent:", data); // Log the data being sent
-          const res = await axiosInstance.put("/auth/update-profile", data);
-          console.log("Update profile response:", res.data); // Log the response received
-          set({ authUser: res.data });
-          toast.success("Profile updated successfully");
+            console.log("Update profile data being sent:", data); // Log the data being sent
+            const res = await axiosInstance.put("/auth/update-profile", data);
+            console.log("Update profile response:", res.data); // Log the response received
+            set({ authUser: res.data });
+            toast.success("Profile updated successfully");
         } catch (error) {
-          console.log("error in update profile:", error);
-          toast.error(error.response.data.message);
+            console.log("error in update profile:", error);
+            toast.error(error.response.data.message);
         } finally {
-          set({ isUpdatingProfile: false });
+            set({ isUpdatingProfile: false });
         }
-      },  
+    }
 
 
    

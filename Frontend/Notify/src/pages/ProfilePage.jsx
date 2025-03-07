@@ -26,8 +26,8 @@ const ProfilePage = () => {
       <div className="max-w-2xl mx-auto p-4 py-8">
         <div className="bg-base-300 rounded-xl p-6 space-y-8">
           <div className="text-center">
-            <h1 className="text-2xl font-semibold text-fuchsia-800">Profile</h1>
-            <p className="mt-2">Your profile information</p>
+            <h1 className="text-3xl font-semibold text-fuchsia-800">Profile</h1>
+            <p className="mt-2 text-purple-200">Your profile information</p>
           </div>
 
           {/* avatar upload section */}
@@ -37,7 +37,7 @@ const ProfilePage = () => {
               <img
                 src={selectedImg || authUser.profilePic || "/avatar.png"}
                 alt="Profile"
-                className="size-32 rounded-full object-cover border-4 "
+                className="size-32 rounded-full border-fuchsia-300 object-cover border-4 "
               />
               <label
                 htmlFor="avatar-upload"
@@ -46,6 +46,7 @@ const ProfilePage = () => {
                   bg-base-content hover:scale-105
                   p-2 rounded-full cursor-pointer 
                   transition-all duration-200
+                 
                   ${isUpdatingProfile ? "animate-pulse pointer-events-none" : ""}
                 `}
               >
@@ -67,19 +68,19 @@ const ProfilePage = () => {
 
           <div className="space-y-7">
             <div className="space-y-1.5">
-              <div className="text-sm text-zinc-400 flex items-center gap-2">
+              <div className="text-sm text-fuchsia-800 flex items-center gap-2">
                 <User className="w-4 h-4" />
                 Full Name
               </div>
-              <p className="px-4 py-2.5 bg-base-200 rounded-lg border">{authUser?.fullname}</p>
+              <p className="px-4 py-2.5 bg-base-200 rounded-lg border-purple-800 hover:border-purple-500 border-2">{authUser?.fullname}</p>
             </div>
 
             <div className="space-y-1.5">
-              <div className="text-sm text-zinc-400 flex items-center gap-2">
+              <div className="text-sm text-fuchsia-800 flex items-center gap-2">
                 <Mail className="w-4 h-4" />
                 Email Address
               </div>
-              <p className="px-4 py-2.5 bg-base-200 rounded-lg border">{authUser?.email}</p>
+              <p className="px-4 py-2.5 bg-base-200 rounded-lg border-2 border-purple-800 hover:border-purple-500">{authUser?.email}</p>
             </div>
           </div>
 
@@ -87,12 +88,12 @@ const ProfilePage = () => {
             <h2 className="text-lg font-medium  mb-4">Account Information</h2>
             <div className="space-y-3 text-sm">
               <div className="flex items-center justify-between py-2 border-b border-zinc-700">
-                <span>Member Since</span>
+                <span className="text-fuchsia-800 hover:text-fuchsia-500">Member Since</span>
                 <span>{authUser.createdAt?.split("T")[0]}</span>
               </div>
-              <div className="flex items-center justify-between py-2">
-                <span>Account Status</span>
-                <span className="text-green-500">Active</span>
+              <div className="flex items-center justify-between py-2 ">
+                <span className="text-fuchsia-800 hover:text-fuchsia-500">Account Status</span>
+                <span className="text-green-600 font-medium hover:text-green-400">Active</span>
               </div>
             </div>
           </div>
