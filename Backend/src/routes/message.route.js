@@ -9,4 +9,7 @@ router.get("/:id", protectRoute, getMessages);
 
 router.post("/send/:id", protectRoute, sendMessage);
 
+//add this recently
+// router.get('/users', getUsers);
+
 export default router;

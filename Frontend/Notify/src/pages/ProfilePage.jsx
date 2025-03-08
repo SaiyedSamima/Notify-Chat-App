@@ -27,7 +27,7 @@ const ProfilePage = () => {
         <div className="bg-base-300 rounded-xl p-6 space-y-8">
           <div className="text-center">
             <h1 className="text-3xl font-semibold text-fuchsia-800">Profile</h1>
-            <p className="mt-2 text-purple-200">Your profile information</p>
+            <p className="mt-2 text-purple-300">Your profile information</p>
           </div>
 
           {/* avatar upload section */}

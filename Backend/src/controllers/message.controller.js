@@ -15,6 +15,17 @@ export const getUsersForSidebar = async (req, res) => {
   }
 };
 
+//add tihs recently
+// export const getUsers = async (req, res) => {
+//   try {
+//       const users = await User.find().select('-password');
+//       res.status(200).json(users);
+//   } catch (error) {
+//       console.log("getUsers error", error.message);
+//       res.status(500).json({ message: "Something went wrong" });
+//   }
+// };
+
 export const getMessages = async (req, res) => {
   try {
     const { id: userToChatId } = req.params;

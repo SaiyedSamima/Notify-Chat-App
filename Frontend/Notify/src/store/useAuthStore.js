@@ -9,6 +9,7 @@ export const useAuthStore = create((set) => ({
     isLoggingIn: false,
     isUpdatingProfile: false,
     isCheckingAuth: true,
+    onlineUsers:[],
 
     checkAuth: async () => {
         // check if user is authenticated
@@ -54,7 +55,10 @@ export const useAuthStore = create((set) => ({
         try {
           const res = await axiosInstance.post("/auth/login", data);
           set({ authUser: res.data });
+          console.log("Login response:", res.data);
+          localStorage.setItem("token", res.data.token);
           toast.success("Logged in successfully");
+          
     
         } catch (error) {
           toast.error(error.response.data.message);
